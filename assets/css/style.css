@@ -1,10 +1,4 @@
-/**
-* Template Name: TheEvent
-* Updated: Jun 18 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 /*--------------------------------------------------------------
 # General
@@ -239,7 +233,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(0, 1, 3, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -463,56 +457,69 @@ p {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* Hero section pantalla completa con fondo lila */
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../img/hero-bg.jpg) top center;
-  background-size: cover;
-  overflow: hidden;
-  position: relative;
+  background: linear-gradient(135deg, #d6a5f7, #9c4de0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
+/* Contenedor centrado */
+.hero-container {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen centrada y escalable */
+.hero-container img {
+  width: 100%;
+  max-width: 10000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-container img {
+    width: 10000vw;        /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 100000vw;
+    height: auto;
   }
 }
 
-/* Solo la sección modificada de #hero */
-#hero {
-  width: 100%;
-  height: 100vh;
-  background: url(../img/hero-bg.jpg) top center;
-  background-size: cover;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
 
-#hero:before {
+#hero::before {
   content: "";
-  background: linear-gradient(to right, rgba(75, 46, 131, 0.8), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(192, 163, 227, 0.8), rgba(255, 255, 255, 0));
   position: absolute;
-  bottom: 0;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
 }
 
-#hero .hero-container {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 90px 15px 0;
-}
+
+
+
 
 @media (max-width: 991px) {
   #hero .hero-container {
     top: 70px;
+  }
+
+  #hero h1 {
+    font-size: 34px;
+  }
+
+  #hero p {
+    font-size: 16px;
   }
 }
 
@@ -528,22 +535,10 @@ p {
   color: #B19CD9;
 }
 
-@media (max-width: 991px) {
-  #hero h1 {
-    font-size: 34px;
-  }
-}
-
 #hero p {
   color: #ebebeb;
   font-weight: 700;
   font-size: 20px;
-}
-
-@media (max-width: 991px) {
-  #hero p {
-    font-size: 16px;
-  }
 }
 
 #hero .play-btn {
@@ -561,7 +556,7 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-40%) translateY(-50%);
+  transform: translate(-40%, -50%);
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -571,21 +566,17 @@ p {
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-#hero .play-btn:before {
+#hero .play-btn::before {
   content: "";
   position: absolute;
   width: 120px;
   height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border: 2px solid rgba(163, 163, 163, 0.4);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
+  border: 2px solid rgba(163, 163, 163, 0.4);
+  animation: pulsate-btn 2s infinite steps;
+  opacity: 1;
 }
 
 #hero .play-btn:hover::after {
@@ -598,7 +589,7 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-40%) translateY(-50%);
+  transform: translate(-40%, -50%);
   width: 0;
   height: 0;
   border: none;
@@ -622,8 +613,8 @@ p {
   line-height: 1;
   margin: 10px;
   color: #fff;
-  animation-delay: 0.8s;
   border: 2px solid #6B3FA0;
+  animation-delay: 0.8s;
 }
 
 #hero .about-btn:hover {
@@ -633,15 +624,15 @@ p {
 
 @keyframes pulsate-btn {
   0% {
-    transform: scale(0.6, 0.6);
+    transform: scale(0.6);
     opacity: 1;
   }
-
   100% {
-    transform: scale(1, 1);
+    transform: scale(1);
     opacity: 0;
   }
 }
+
 
 /*--------------------------------------------------------------
 # About Section
