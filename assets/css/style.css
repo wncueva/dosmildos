@@ -17,14 +17,14 @@ h1, h2, h3, h4, h5, h6,
 .section-header h2,
 #about h3,
 .card-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Playfair Display', serif;
   text-transform: uppercase;
 }
 
-a {
-  color: #6B3FA0;
-  text-decoration: none;
-  transition: 0.5s;
+
+
+a, .navbar a, .navbar a:focus {
+  font-family: 'Arimo', sans-serif;
 }
 
 a:hover,
